@@ -17,9 +17,14 @@ export class UserController {
   }
 
   @Get(':id')
-  getOne(@Param('id') id: ObjectId) {
-    return this.userService.getOne(id);
+  getOneById(@Param('id') id: ObjectId) {
+    return this.userService.getOneById(id);
   }
 
-  setParams() {}
+  @Get(':email')
+  getOneByEmail(@Param('email') email: string) {
+    return this.userService.getOneByEmail(email);
+  }
+
+  // setParams() {}
 }
